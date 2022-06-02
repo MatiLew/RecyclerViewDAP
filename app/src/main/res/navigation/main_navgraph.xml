@@ -9,5 +9,17 @@
         android:id="@+id/mainFragment"
         android:name="com.example.recyclerviewdap.MainFragment"
         android:label="main_fragment"
-        tools:layout="@layout/main_fragment" />
+        tools:layout="@layout/main_fragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_dataFragment"
+            app:destination="@id/dataFragment" />
+        <argument
+            android:name="recNumber"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/dataFragment"
+        android:name="com.example.recyclerviewdap.DataFragment"
+        android:label="fragment_data2"
+        tools:layout="@layout/fragment_data2" />
 </navigation>
