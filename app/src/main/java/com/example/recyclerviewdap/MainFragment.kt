@@ -56,7 +56,9 @@ class MainFragment : Fragment() {
 
     fun onItemClick ( position : Int )  {
         Snackbar.make(v,position.toString(), Snackbar.LENGTH_SHORT).show()
-        val action = MainFragmentDirections.actionMainFragmentToDataFragment()
+        var filo = viewModel.filosofos[position]
+        var filoArray = arrayOf<String>(filo.info,filo.escuela,filo.nombre,filo.siglo,filo.foto)
+        val action = MainFragmentDirections.actionMainFragmentToDataFragment(filoArray)
         v.findNavController().navigate(action)
     }
 }
